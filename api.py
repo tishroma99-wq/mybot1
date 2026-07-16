@@ -80,7 +80,7 @@ async def register_user(data: dict):
         raise HTTPException(status_code=400, detail="Укажите канал/группу/бота для верификации")
 
     existing = await db.get_user(telegram_id)
-    if existing and existing("phone"):
+    if existing and existing["phone"]:
         raise HTTPException(status_code=409, detail="Этот аккаунт уже верифицирован")
 
     user_id = await db.verify_user(telegram_id, phone, username)

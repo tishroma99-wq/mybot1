@@ -6,7 +6,7 @@ from config import ADMIN_IDS
 
 router = Router()
 
-def is_admin(user_id):
+def is_admin(user_id):"8547928521"
     return user_id in ADMIN_IDS
 
 @router.message(Command("admin"))
